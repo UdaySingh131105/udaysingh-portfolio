@@ -6,7 +6,7 @@ export default function HeroText() {
     const flipWords = ["Secure", "Modern", "Scaleable"];
 
     return (
-        <div className="mt-10 text-center md:mt-20 md:text-left rounded-3xl bg-clip-text p-4">
+        <div className="z-10 mt-20 text-center md:mt-40 md:text-left rounded-3xl bg-clip-text p-4">
             <AnimatePresence mode="wait">
                 {/* Desktop View */}
                 <motion.div
@@ -21,7 +21,7 @@ export default function HeroText() {
                         initial={{ opacity: 0, y: -30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="text-4xl"
+                        className="text-4xl text-neutral-200"
                     >
                         Hi, I'm Uday
                     </motion.h1>
@@ -30,7 +30,7 @@ export default function HeroText() {
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.3, duration: 0.8 }}
-                            className="text-5xl font-medium text-neutral-300"
+                            className="text-5xl font-medium text-neutral-200"
                         >
                             A Developer <br /> Dedicated to Crafting
                         </motion.p>
@@ -48,7 +48,7 @@ export default function HeroText() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.9, duration: 0.8 }}
-                            className="text-4xl font-medium text-neutral-300"
+                            className="text-4xl font-medium text-neutral-200"
                         >
                             Web Solutions
                         </motion.p>
@@ -68,7 +68,7 @@ export default function HeroText() {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="text-4xl font-medium"
+                        className="text-4xl font-medium text-white"
                     >
                         Hi, I'm Uday
                     </motion.p>
@@ -78,7 +78,7 @@ export default function HeroText() {
                             initial={{ opacity: 0, x: -40 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.3, duration: 0.7 }}
-                            className="text-5xl font-black text-neutral-300"
+                            className="text-5xl font-black text-white"
                         >
                             Building
                         </motion.p>
@@ -98,7 +98,7 @@ export default function HeroText() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.9, duration: 0.8 }}
-                            className="font-black text-4xl text-neutral-300"
+                            className="font-black text-4xl text-white"
                         >
                             Web Applications
                         </motion.p>

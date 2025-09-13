@@ -1,10 +1,12 @@
 "use client";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { Float, OrbitControls } from "@react-three/drei";
 import AstronautModel from "@/components/AstronautModel";
 import { useMediaQuery } from "react-responsive";
 import { useFrame } from "@react-three/fiber";
 import { easing } from "maath";
+import { Suspense } from "react";
+import Loader from "./loader";
 
 export default function AstronautScene() {
   const isMobile = useMediaQuery({maxWidth: 853})
@@ -15,8 +17,12 @@ export default function AstronautScene() {
       <directionalLight position={[5, 5, 5]} intensity={1} />
 
       {/* Model */}
-      <AstronautModel scale={isMobile && 0.1} position={isMobile && [0, -1, 0]} />
-
+      <Suspense fallback={<Loader />}>
+        <Float>
+          <AstronautModel scale={isMobile && 0.1} position={isMobile && [0, -1, 0]} />
+        </Float>
+        <Rig />
+      </Suspense>
       {/* Controls */}
       <OrbitControls />
     </Canvas>

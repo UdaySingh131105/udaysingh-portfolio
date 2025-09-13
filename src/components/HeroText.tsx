@@ -6,7 +6,7 @@ export default function HeroText() {
     const flipWords = ["Secure", "Modern", "Scaleable"];
 
     return (
-        <div className="z-10 mt-20 text-center md:mt-40 md:text-left rounded-3xl bg-clip-text p-4">
+        <div className="z-10 mt-20 text-center md:ml-20 md:mt-40 md:text-left rounded-3xl bg-clip-text p-4">
             <AnimatePresence mode="wait">
                 {/* Desktop View */}
                 <motion.div

@@ -24,7 +24,7 @@ export default function AstronautScene() {
         <Rig />
       </Suspense>
       {/* Controls */}
-      <OrbitControls />
+      <OrbitControls enablePan={false} enableZoom={false} rotateSpeed={0.8} />
     </Canvas>
   );
 }

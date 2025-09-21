@@ -6,8 +6,8 @@ export default function HeroText() {
     const flipWords = ["Secure", "Modern", "Scaleable"];
 
     return (
-        <div className="z-10 mt-20 text-center md:ml-20 md:mt-40 md:text-left rounded-3xl bg-clip-text p-4">
-            <AnimatePresence mode="wait">
+        <div className="z-10 mt-20 text-center md:ml-20 lg:mt-40 md:mt-20 md:text-left rounded-3xl bg-clip-text p-4">
+            <AnimatePresence>
                 {/* Desktop View */}
                 <motion.div
                     key="desktop"
@@ -50,7 +50,7 @@ export default function HeroText() {
                             transition={{ delay: 0.9, duration: 0.8 }}
                             className="text-4xl font-medium text-neutral-200"
                         >
-                            Web Solutions
+                            Real World Solutions
                         </motion.p>
                     </div>
                 </motion.div>

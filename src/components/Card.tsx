@@ -18,7 +18,7 @@ export default function Card({
   const transition: Transition = { type: "spring", stiffness: 300, damping: 20 }
 
   const baseProps = {
-    style: { ...style, x, y, rotate, willChange: "transform" },
+    style: { ...style, x, y, willChange: "transform" },
     drag: true,
     dragConstraints: containerRef ? containerRef : undefined,
     dragElastic: 0.1,

@@ -70,7 +70,22 @@ export default function About() {
             />
             <Card
               style={{ rotate: "45deg", top: "60%", left: "15%" }}
-              image={"/assets/logos/csharp-pink.png"}
+              image={"/assets/logos/c.png"}
+              containerRef={grid2Container}
+            />
+            <Card
+              style={{ rotate: "45deg", top: "40%", left: "15%" }}
+              image={"/assets/logos/cpp.png"}
+              containerRef={grid2Container}
+            />
+            <Card
+              style={{ rotate: "0deg", top: "60%", left: "45%" }}
+              image={"/assets/logos/ethereum.png"}
+              containerRef={grid2Container}
+            />
+            <Card
+              style={{ rotate: "0deg", top: "77%", left: "75%" }}
+              image={"/assets/logos/git.png"}
               containerRef={grid2Container}
             />
           </div>

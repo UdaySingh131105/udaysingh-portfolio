@@ -3,6 +3,7 @@ import Hero from "@/app/sections/Hero";
 import About from "./sections/About";
 import Projects from "./sections/Projects";
 import AcademicQualification from "./sections/AcademicQualification";
+import Certifications from "./sections/Certifications";
 
 export default function Home() {
   return <div>
@@ -11,5 +12,6 @@ export default function Home() {
     <About />
     <Projects />
     <AcademicQualification />
+    <Certifications />
   </div>
 }

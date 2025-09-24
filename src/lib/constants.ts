@@ -1,3 +1,6 @@
+import { hr, image } from "motion/react-client";
+import { title } from "process";
+
 export const myProjects = [
   {
     title: "MaizeGuard - Maize Disease Prediction App",
@@ -168,3 +171,83 @@ export const reviews = [
   },
 ];
   
+export const certificates = [
+  {
+    title: "Cloud Practitioner - AWS Simulearn",
+    image: "/assets/certificates/CloudPractitionerAWS_Simulearn.jpg",
+    href: "https://drive.google.com/file/d/1QYSiLnMTaw1yL-DRP6CD14Zn9KQC2x_n/view?usp=sharing",
+  },
+  {
+    title: "GFG - AWS Certified Cloud Practitioner",
+    image: "/assets/certificates/GFG_AWS_Cloud_Practitioner.jpg",
+    href: "https://drive.google.com/file/d/1xHhsdV936cMvWBvpvDmFVzlak-aX4vXu/view?usp=sharing"
+  },
+  {
+    title: "Guvi Python",
+    image: "/assets/certificates/Guvi Python Certificate.jpg",
+    href: "https://drive.google.com/file/d/1WlfH0Z18OoLHTzTnDoeq7DmfmBrVMAUg/view?usp=sharing"
+  },
+  {
+    title: "HackerRank Problem Solving",
+    image: "/assets/certificates/HackerRank Problem Solving.jpg",
+    href: "https://drive.google.com/file/d/1PyP4JnM-4pHIULg4vDVClxPYVsi-yVK5/view?usp=sharing"
+  },
+  {
+    title: "ICCNSML",
+    image: "/assets/certificates/ICCNSML.jpg",
+    href: "https://drive.google.com/file/d/1c9IijVTHnj39a7CIUa_9UYRjV8Y5s1qN/view?usp=sharing"
+  },
+  {
+    title: "Introduction to AI",
+    image: "/assets/certificates/Introduction to AI.jpg",
+    href: "https://drive.google.com/file/d/1AZOaYoBA_dhirnfvfZtdsE08IYCjOzCq/view?usp=sharing"
+  },
+  {
+    title: "Introduction To Programming In C",
+    image: "/assets/certificates/Introduction To Programming In C.jpg",
+    href: "https://drive.google.com/file/d/1Qf9tkLemgQDF0x8BmCGohTep9sYmMfiq/view?usp=sharing"
+  }
+];
+
+export const skillBadges = [
+  {
+    title: "Develop Serverless Applications on Cloud Run",
+    image: "https://images.credly.com/size/340x340/images/71b9b0df-64f1-4c0a-867f-942e2a5a5a14/image.png",
+    href: "https://www.credly.com/badges/03268563-52e5-41a4-820b-1a51cdbbe434",
+  },
+  {
+    title: "Configure Service Accounts and IAM Roles for Google Cloud",
+    image: "https://images.credly.com/size/340x340/images/374800df-53a7-407e-b660-1efa73da122a/image.png",
+    href: "https://www.credly.com/badges/a09dec63-525e-4292-b47b-a40e392df7e4",
+  },
+  {
+    title: "Cloud Functions: 3 Ways Skill Badge",
+    image: "https://images.credly.com/size/340x340/images/12ca3878-2560-4d84-a3a5-c317db9ca549/image.png",
+    href: "https://www.credly.com/badges/2432e74d-d38b-423b-8bb2-707e8d9af461",
+  },
+  {
+    title: "Store, Process, and Manage Data on Google Cloud - Console Skill Badge",
+    image: "https://images.credly.com/size/340x340/images/449ee94a-268c-4a6d-9983-0507fbdeaf46/image.png",
+    href: "https://www.credly.com/badges/2e21b40c-e84c-4c11-8133-af1b5be12089",
+  },
+  {
+    title: "Set Up a Google Cloud Network",
+    image: "https://images.credly.com/size/340x340/images/189c5c31-67c6-4eae-87dc-3b8185a99043/image.png",
+    href: "https://www.credly.com/badges/1c882354-1acd-483c-8a19-164b4e72dd59",
+  },
+  {
+    title: "Secure Software Delivery",
+    image: "https://images.credly.com/size/340x340/images/dd932e71-6255-4c38-b873-7c2f6a44c1f6/blob",
+    href: "https://www.credly.com/earner/earned/badge/91c169a4-cf9c-4c42-8998-9be901491d21",
+  },
+  {
+    title: "Manage Kubernetes in Google Cloud",
+    image: "https://images.credly.com/size/340x340/images/20cd679d-43c3-460e-979a-8feba38eaba6/image.png",
+    href: "https://www.credly.com/earner/earned/badge/6e3d0ef0-da10-4d57-b600-97d3adfd69e6",
+  },
+  { 
+    title: "AWS Educate Introduction to Cloud 101",
+    image: "https://images.credly.com/size/340x340/images/e51a8579-188d-4363-8ed1-12ad164ef57b/blob",
+    href: "https://www.credly.com/earner/earned/badge/17146549-5389-4669-b67d-38948dc39ef9",
+  }
+]

@@ -2,8 +2,8 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import Link from "next/link";
 
-// ✅ MenuToggle component
 function MenuToggle({ isOpen }: { isOpen: boolean }) {
   return isOpen ? <X /> : <Menu />;
 }
@@ -21,23 +21,23 @@ export default function Navbar() {
     <nav className="fixed inset-x-0 z-20 w-full backdrop-blur-lg bg-black/30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-3">
-          <a
+          <Link
             href="/"
             className="text-xl font-semibold text-neutral-300 cursor-pointer hover:text-white transition-colors"
           >
             Uday Singh
-          </a>
+          </Link>
 
           {/* ✅ Nav items visible from md and up */}
           <div className="hidden md:flex space-x-8 text-neutral-400">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className="hover:text-white text-neutral-300 transition-colors hover:underline"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -62,14 +62,14 @@ export default function Navbar() {
             className="absolute top-full left-0 w-full z-50 bg-black/75 text-white flex flex-col space-y-4 px-6 py-6"
           >
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className="block text-center hover:text-white hover:underline cursor-pointer transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </motion.div>
         )}

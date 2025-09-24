@@ -66,7 +66,7 @@ export default function Contact() {
     >
       <div className="flex flex-col items-center px-6 py-10 mx-auto w-full">
         <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-          Let’s Connect!
+          Let&apos;s Connect!
         </h1>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-10 mt-10 w-full max-w-5xl">

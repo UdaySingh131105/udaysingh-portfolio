@@ -5,7 +5,6 @@ import { OrbitControls, useTexture } from "@react-three/drei";
 import * as THREE from "three";
 import { useRef, useState, useEffect } from "react";
 
-// Props for the icons group
 interface IconsGroupProps {
   icons: string[];
   radius?: number;
@@ -13,16 +12,14 @@ interface IconsGroupProps {
   speed?: number;
 }
 
-// Props for the IconSphere component
 interface IconSphereProps {
-  size?: number;            // camera distance
-  iconSize?: number;        // size of each icon
-  rotationSpeed?: number;   // rotation speed of globe
-  icons?: string[];         // optional custom icons
-  radius?: number;          // radius of sphere
+  size?: number;         
+  iconSize?: number;      
+  rotationSpeed?: number;  
+  icons?: string[];         
+  radius?: number;          
 }
 
-// Modal hook to replace alert
 function useModal() {
   const [modalContent, setModalContent] = useState<string | null>(null);
 
@@ -66,12 +63,11 @@ function useModal() {
   return { Modal, showModal: setModalContent };
 }
 
-// IconsGroup component
 function IconsGroup({ icons, radius = 5, scale = 1.2, speed = 0.003 }: IconsGroupProps) {
   const groupRef = useRef<THREE.Group>(null);
   const { showModal } = useModal();
+  const textures = useTexture(icons);
 
-  // Rotate the group while keeping center fixed
   useFrame(() => {
     if (groupRef.current) {
       groupRef.current.rotation.y += speed;
@@ -80,11 +76,9 @@ function IconsGroup({ icons, radius = 5, scale = 1.2, speed = 0.003 }: IconsGrou
 
   return (
     <group ref={groupRef}>
-      {icons.map((url, i) => {
-        const texture = useTexture(url);
+      {textures.map((texture, i) => {
         const material = new THREE.SpriteMaterial({ map: texture, color: 0xffffff });
 
-        // Fibonacci sphere algorithm for even spacing
         const phi = Math.acos(1 - (2 * (i + 0.5)) / icons.length);
         const theta = Math.sqrt(icons.length * Math.PI) * phi;
         const pos = new THREE.Vector3().setFromSphericalCoords(radius, phi, theta);
@@ -95,7 +89,7 @@ function IconsGroup({ icons, radius = 5, scale = 1.2, speed = 0.003 }: IconsGrou
             material={material}
             scale={[scale, scale, scale]}
             position={pos}
-            onClick={() => showModal(`Clicked icon: ${url}`)}
+            onClick={() => showModal(`Clicked icon: ${icons[i]}`)}
           />
         );
       })}
@@ -103,7 +97,6 @@ function IconsGroup({ icons, radius = 5, scale = 1.2, speed = 0.003 }: IconsGrou
   );
 }
 
-// Main IconSphere component
 export default function IconSphere({
   size = 20,
   iconSize = 1.2,
@@ -114,7 +107,6 @@ export default function IconSphere({
   const [loading, setLoading] = useState(true);
   const { Modal, showModal } = useModal();
 
-  // Default icons for your tech stack
   const defaultIcons = [
     "https://raw.githubusercontent.com/github/explore/main/topics/html/html.png",
     "https://raw.githubusercontent.com/github/explore/main/topics/css/css.png",

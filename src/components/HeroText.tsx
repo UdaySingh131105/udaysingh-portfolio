@@ -23,7 +23,7 @@ export default function HeroText() {
                         transition={{ duration: 0.8 }}
                         className="text-4xl text-neutral-200"
                     >
-                        Hi, I'm Uday
+                        Hi, I&apos;m Uday
                     </motion.h1>
                     <div className="flex flex-col item-start">
                         <motion.p

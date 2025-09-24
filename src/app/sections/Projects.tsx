@@ -1,4 +1,5 @@
 import { Project } from "@/components/Project";
+import { ExpandableCardDemo } from "@/components/testProject";
 import { myProjects } from "@/lib/constants";
 
 export default function Projects() {

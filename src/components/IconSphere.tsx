@@ -139,7 +139,6 @@ export default function IconSphere({
     "https://raw.githubusercontent.com/github/explore/main/topics/java/java.png",
     "https://raw.githubusercontent.com/github/explore/refs/heads/main/topics/c/c.png",
     "https://raw.githubusercontent.com/github/explore/refs/heads/main/topics/cpp/cpp.png",
-    "https://raw.githubusercontent.com/github/explore/main/topics/graphql/graphql.png",
     "https://raw.githubusercontent.com/github/explore/main/topics/mongodb/mongodb.png",
     "https://raw.githubusercontent.com/github/explore/main/topics/postgresql/postgresql.png",
     "https://raw.githubusercontent.com/github/explore/main/topics/redis/redis.png",
@@ -169,7 +168,7 @@ export default function IconSphere({
             <ambientLight intensity={1} />
             <pointLight position={[10, 10, 10]} />
             <IconsGroup icons={icons} radius={radius} scale={iconSize} speed={rotationSpeed} />
-            <OrbitControls enableDamping target={[0, 0, 0]} /> {/* center fixed */}
+            <OrbitControls enableDamping enableZoom={false} target={[0, 0, 0]} /> {/* center fixed */}
           </Canvas>
           {/* <Modal /> */}
         </>

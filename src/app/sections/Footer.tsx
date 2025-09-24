@@ -1,0 +1,40 @@
+import { mySocials } from "@/lib/constants";
+
+export default function Footer() {
+  return (
+    <footer className="w-full bg-black/80 backdrop-blur-md border-t border-gray-700/50 mt-20 px-6 py-8 text-gray-400">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+
+        {/* Left: Legal */}
+        <div className="flex flex-col md:flex-row items-center gap-3 text-sm">
+          <p className="hover:text-white transition-colors cursor-pointer">Terms & Conditions</p>
+          <span>|</span>
+          <p className="hover:text-white transition-colors cursor-pointer">Privacy Policy</p>
+        </div>
+
+        {/* Center: Social Icons */}
+        <div className="flex gap-4">
+          {mySocials.map((social, index) => (
+            <a
+              href={social.href}
+              key={index}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full hover:bg-white/10 transition-colors"
+            >
+              <img src={social.icon} alt={social.name} className="w-5 h-5 filter invert text-white dark:invert-0" />
+            </a>
+          ))}
+        </div>
+
+        {/* Right: Copyright */}
+        <div className="text-sm text-gray-500 md:text-right">
+          © 2025 Uday Singh. All rights reserved.
+        </div>
+      </div>
+
+      {/* Bottom border */}
+      <div className="mt-6 bg-gradient-to-r from-transparent via-gray-700 to-transparent h-[1px] w-full" />
+    </footer>
+  );
+};

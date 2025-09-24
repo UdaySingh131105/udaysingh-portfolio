@@ -113,11 +113,6 @@ export const mySocials = [
     href: "https://github.com/Uday131105",
     icon: "/assets/socials/github.svg",
   },
-  {
-    name: "Twitter",
-    href: "https://x.com/",
-    icon: "/assets/socials/twitter.svg",
-  },
 ];
 
 export const experiences = [

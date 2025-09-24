@@ -5,6 +5,7 @@ import Projects from "./sections/Projects";
 import AcademicQualification from "./sections/AcademicQualification";
 import Certifications from "./sections/Certifications";
 import ContactForm from "./sections/Contact";
+import Footer from "./sections/Footer";
 
 export default function Home() {
   return <div>
@@ -15,5 +16,6 @@ export default function Home() {
     <AcademicQualification />
     <Certifications />
     <ContactForm />
+    <Footer />
   </div>
 }

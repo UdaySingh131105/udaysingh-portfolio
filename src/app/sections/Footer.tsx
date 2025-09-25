@@ -24,7 +24,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="p-2 rounded-full hover:bg-white/10 transition-colors"
             >
-              <Image src={social.icon} alt={social.name} height={5} width={5} className="w-5 h-5 filter invert text-white dark:invert-0" />
+              <Image src={social.icon} alt={social.name} height={35} width={35} className="filter invert text-white dark:invert-0" />
             </Link>
           ))}
         </div>

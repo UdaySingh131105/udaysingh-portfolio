@@ -103,12 +103,12 @@ export const mySocials = [
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/udaysingh13112005/",
-    icon: "/assets/socials/linkedin.svg",
+    icon: "/assets/socials/linkedin.png",
   },
   {
     name: "GitHub",
     href: "https://github.com/Uday131105",
-    icon: "/assets/socials/github.svg",
+    icon: "/assets/socials/github.png",
   },
 ];
 

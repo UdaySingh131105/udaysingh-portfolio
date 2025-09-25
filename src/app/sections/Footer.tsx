@@ -1,4 +1,6 @@
 import { mySocials } from "@/lib/constants";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -15,15 +17,15 @@ export default function Footer() {
         {/* Center: Social Icons */}
         <div className="flex gap-4">
           {mySocials.map((social, index) => (
-            <a
+            <Link
               href={social.href}
               key={index}
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full hover:bg-white/10 transition-colors"
             >
-              <img src={social.icon} alt={social.name} className="w-5 h-5 filter invert text-white dark:invert-0" />
-            </a>
+              <Image src={social.icon} alt={social.name} height={5} width={5} className="w-5 h-5 filter invert text-white dark:invert-0" />
+            </Link>
           ))}
         </div>
 

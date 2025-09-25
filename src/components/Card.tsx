@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useMotionValue, useTransform, Transition } from "framer-motion"
+import { AnimatePresence, motion, useMotionValue, Transition } from "framer-motion"
 
 export default function Card({
   text,
@@ -13,7 +13,6 @@ export default function Card({
 }) {
   const x = useMotionValue(0)
   const y = useMotionValue(0)
-  const rotate = useTransform(x, [-150, 150], [-10, 10])
 
   const transition: Transition = { type: "spring", stiffness: 300, damping: 20 }
 

@@ -1,6 +1,3 @@
-import { hr, image } from "motion/react-client";
-import { title } from "process";
-
 export const myProjects = [
   {
     title: "MaizeGuard - Maize Disease Prediction App",

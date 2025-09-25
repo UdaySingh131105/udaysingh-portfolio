@@ -3,12 +3,11 @@
 import { useRef } from "react";
 import Card from "@/components/Card"
 import { Globe } from "@/components/Globe";
-import CopyEmailButton from "@/components/CopyEmailButton";
 import IconSphere from "@/components/IconSphere";
+import Image from "next/image";
 
 export default function About() {
   const grid2Container = useRef<HTMLDivElement | null>(null);
-  // bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-gray-950 dark:via-gray-900 dark:to-gray-800
 
   return (
     <section id="about" className="relative min-h-screen px-6 py-10 flex flex-col items-center justify-center">
@@ -20,9 +19,11 @@ export default function About() {
         {/* Grid 1 - Intro */}
         <div className="relative flex items-end bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 overflow-hidden col-span-2 md:col-span-3 row-span-1 md:row-span-2 group shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200/50 dark:border-gray-700/50">
             <div className="absolute inset-0 overflow-hidden rounded-2xl">
-                <img
+                <Image
                 src="/assets/coding-pov.png"
                 alt="Coding POV"
+                width={500}
+                height={500}
                 className="absolute scale-[1.25] md:scale-[2] lg:scale-[1.5] -right-[7rem] -top-[5rem] lg:-top-[5rem] transition-transform duration-700 ease-in-out group-hover:scale-[1.7] filter brightness-90 dark:brightness-75"
                 />
             </div>

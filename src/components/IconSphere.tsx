@@ -1,6 +1,6 @@
 "use client";
 
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useTexture } from "@react-three/drei";
 import * as THREE from "three";
 import { useRef, useState, useEffect } from "react";
@@ -20,52 +20,8 @@ interface IconSphereProps {
   radius?: number;          
 }
 
-function useModal() {
-  const [modalContent, setModalContent] = useState<string | null>(null);
-
-  const Modal = () => (
-    modalContent && (
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          background: "rgba(0, 0, 0, 0.7)",
-          color: "white",
-          padding: "20px",
-          borderRadius: "8px",
-          zIndex: 1000,
-          textAlign: "center",
-          maxWidth: "300px",
-          fontFamily: "Inter, sans-serif"
-        }}
-      >
-        <p>{modalContent}</p>
-        <button
-          onClick={() => setModalContent(null)}
-          style={{
-            marginTop: "10px",
-            padding: "8px 16px",
-            backgroundColor: "#444",
-            border: "none",
-            borderRadius: "4px",
-            color: "white",
-            cursor: "pointer",
-          }}
-        >
-          Close
-        </button>
-      </div>
-    )
-  );
-
-  return { Modal, showModal: setModalContent };
-}
-
 function IconsGroup({ icons, radius = 5, scale = 1.2, speed = 0.003 }: IconsGroupProps) {
   const groupRef = useRef<THREE.Group>(null);
-  const { showModal } = useModal();
   const textures = useTexture(icons);
 
   useFrame(() => {
@@ -89,7 +45,6 @@ function IconsGroup({ icons, radius = 5, scale = 1.2, speed = 0.003 }: IconsGrou
             material={material}
             scale={[scale, scale, scale]}
             position={pos}
-            onClick={() => showModal(`Clicked icon: ${icons[i]}`)}
           />
         );
       })}
@@ -105,7 +60,6 @@ export default function IconSphere({
   radius = 5
 }: IconSphereProps) {
   const [loading, setLoading] = useState(true);
-  const { Modal, showModal } = useModal();
 
   const defaultIcons = [
     "https://raw.githubusercontent.com/github/explore/main/topics/html/html.png",
@@ -152,18 +106,15 @@ export default function IconSphere({
           Loading...
         </div>
       ) : (
-        <>
-          <Canvas
-            camera={{ position: [0, 0, size], fov: 45 }}
-            style={{ width: "100%", height: "100%" }}
-          >
-            <ambientLight intensity={1} />
-            <pointLight position={[10, 10, 10]} />
-            <IconsGroup icons={icons} radius={radius} scale={iconSize} speed={rotationSpeed} />
-            <OrbitControls enableDamping enableZoom={false} target={[0, 0, 0]} /> {/* center fixed */}
-          </Canvas>
-          {/* <Modal /> */}
-        </>
+        <Canvas
+          camera={{ position: [0, 0, size], fov: 45 }}
+          style={{ width: "100%", height: "100%" }}
+        >
+          <ambientLight intensity={1} />
+          <pointLight position={[10, 10, 10]} />
+          <IconsGroup icons={icons} radius={radius} scale={iconSize} speed={rotationSpeed} />
+          <OrbitControls enableDamping enableZoom={false} target={[0, 0, 0]} />
+        </Canvas>
       )}
     </div>
   );

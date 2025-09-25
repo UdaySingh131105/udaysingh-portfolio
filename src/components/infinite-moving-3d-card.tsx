@@ -1,7 +1,10 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
-import { twMerge } from "tailwind-merge";
-import { CardBody, CardContainer, CardItem } from "@/components/3d-card";
+import { twMerge as cn } from "tailwind-merge";
+import { CometCard } from "@/components/comet-card";
+import Image from "next/image";
+import Link from "next/link";
 
 type MakeCardProps = {
   item: {
@@ -13,42 +16,39 @@ type MakeCardProps = {
 
 const MakeCard: React.FC<MakeCardProps> = ({ item }) => {
   return (
-    <CardContainer className="inter-var">
-      <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[20rem] h-auto rounded-xl p-6 border">
-        <CardItem
-          as="h2"
-          translateZ={20} 
-          className="text-lg font-semibold text-neutral-600 dark:text-white"
-        >
+    <CometCard className="my-5 w-80 md:my-10">
+      <Link
+        href={item.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex w-full cursor-pointer flex-col items-stretch rounded-[16px] border border-gray-700 p-2 md:p-4"
+        style={{ transformStyle: "preserve-3d" }}
+        aria-label={`View ${item.title}`}
+      >
+        <div className="text-lg font-medium h-[70px] w-full">
           {item.title}
-        </CardItem>
-        <CardItem
-          translateZ={50}
-          className="w-full mt-4"
-        >
-          <img 
-            src={item.image}
-            alt={`${item.title} Badge`} 
-            height="1000"
-            width="1000"
-            className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-          />
-        </CardItem>
-        <div className="flex justify-end items-center mt-10">
-          <CardItem
-            translateZ={20}
-            as={"a"}
-            href={item.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 text-sm rounded-full font-bold bg-gray-100 text-black transition-colors"
-          >View →</CardItem>
         </div>
-      </CardBody>
-    </CardContainer>
+        <div className="mx-2 flex-1">
+          <div className="relative mt-2 aspect-square w-[300px] h-[320px]">
+            <Image
+              width={320}
+              height={240}
+              loading="lazy"
+              className="absolute inset-0 rounded-[16px] h-full w-full object-fit"
+              alt={`${item.title} Badge`}
+              src={item.image}
+              style={{
+                boxShadow: "rgba(0, 0, 0, 0.05) 0px 5px 6px 0px",
+              }}
+            />
+          </div>
+        </div>
+
+        <div className="text-end mt-5 text-gray-300 opacity-50">View →</div>
+      </Link>
+    </CometCard>
   );
 };
-
 
 export const InfiniteMovingCards = ({
   items,
@@ -119,15 +119,15 @@ export const InfiniteMovingCards = ({
   return (
     <div
       ref={containerRef}
-      className={twMerge(
+      className={cn(
         "scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
         className,
       )}
     >
       <ul
         ref={scrollerRef}
-        className={twMerge(
-          "flex w-max min-w-full shrink-0 flex-nowrap gap-4 py-4",
+        className={cn(
+          "flex w-max min-w-full shrink-0 flex-nowrap gap-7",
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]",
         )}

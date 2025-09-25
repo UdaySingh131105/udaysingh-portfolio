@@ -45,8 +45,7 @@ export function Globe({
   className?: string;
   config?: COBEOptions;
 }) {
-  let phi = 0;
-  let width = 0;
+  const phiRef = useRef(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pointerInteracting = useRef<number | null>(null);
   const pointerInteractionMovement = useRef(0);
@@ -75,9 +74,7 @@ export function Globe({
 
   useEffect(() => {
     const onResize = () => {
-      if (canvasRef.current) {
-        width = canvasRef.current.offsetWidth;
-      }
+      // Resize handler if needed
     };
 
     window.addEventListener("resize", onResize);
@@ -85,13 +82,11 @@ export function Globe({
 
     const globe = createGlobe(canvasRef.current!, {
       ...config,
-      // Use clientWidth for more accurate sizing
       width: canvasRef.current!.clientWidth * 2,
       height: canvasRef.current!.clientHeight * 2,
       onRender: (state) => {
-        if (!pointerInteracting.current) phi += 0.005;
-        state.phi = phi + rs.get();
-        // Update width and height on each render to be responsive
+        if (!pointerInteracting.current) phiRef.current += 0.005;
+        state.phi = phiRef.current + rs.get();
         if (canvasRef.current) {
           state.width = canvasRef.current.clientWidth * 2;
           state.height = canvasRef.current.clientHeight * 2;

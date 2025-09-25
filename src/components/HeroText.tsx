@@ -70,7 +70,7 @@ export default function HeroText() {
                         transition={{ duration: 0.6 }}
                         className="text-4xl font-medium text-white"
                     >
-                        Hi, I'm Uday
+                        Hi, I&apos;m Uday
                     </motion.p>
 
                     <div>

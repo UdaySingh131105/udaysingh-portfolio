@@ -7,7 +7,6 @@ import { myProjects } from "@/lib/constants";
 import { useMediaQuery } from "react-responsive";
 
 export function Project() {
-  // project is now strictly a project or null
   const [project, setProject] = useState<(typeof myProjects)[number] | null>(null);
   const ref = useRef<HTMLDivElement>(null);
   const isMobile = useMediaQuery({ maxWidth: 853 });
@@ -22,7 +21,7 @@ export function Project() {
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
-        setProject(null); // just null instead of false
+        setProject(null); 
       }
     }
 

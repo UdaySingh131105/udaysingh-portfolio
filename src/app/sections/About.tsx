@@ -28,10 +28,10 @@ export default function About() {
                 />
             </div>
 
-            <div className="relative z-10 space-y-4 p-6 rounded-xl">
-                <p className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-yellow-100 bg-clip-text text-transparent">Hi, I&apos;m Uday Singh</p>
-                <p className="text-gray-700 dark:text-gray-200 text-sm leading-relaxed font-medium">
-                  A passionate developer who enjoys building scalable applications and experimenting with new ideas to solve real-world problems using blockchain, AI, and cloud technologies.
+            <div className="relative z-10 space-y-4 bottom-0 p-6 rounded-xl">
+                <p className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-yellow-100 bg-clip-text text-transparent hidden sm:block">Hi, I&apos;m Uday Singh</p>
+                <p className="text-gray-700 dark:text-gray-200  leading-relaxed font-semibold sm:font-normal sm: text-sm">
+                  Passionate developer building scalable applications and exploring blockchain, AI, and cloud to solve real-world problems.
                 </p>
             </div>
 

@@ -34,7 +34,7 @@ export function Project() {
   useOutsideClick(ref, () => setProject(null));
 
   return (
-    <>
+    <div className="w-full max-w-4xl mx-auto flex flex-col gap-6">
       {/* Background overlay */}
       <AnimatePresence>
         {project && (
@@ -136,14 +136,14 @@ export function Project() {
             onClick={() => setProject(project)}
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer w-full shadow-sm"
+            className="p-2 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer w-full shadow-sm border border-gray-200 dark:border-gray-700 sm:border-none"
           >
             <div className="flex gap-4 flex-col md:flex-row w-full justify-start items-center md:items-start">
               <motion.div layoutId={`image-${project.title}-${id}`}>
                 <motion.img
                   src={project.image}
                   alt={project.title}
-                  className="h-[250px] w-[500px] md:h-24 md:w-24 rounded-lg object-cover object-center"
+                  className="h-[250px] w-[500px] md:h-24 md:w-24 rounded-lg object-contain object-center"
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 />
@@ -174,7 +174,7 @@ export function Project() {
           </motion.div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
